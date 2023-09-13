@@ -1,79 +1,33 @@
-# Viva Web-Scrapper
+# Viva-Scrapper
 
-## Como usarlo
+*Viva-Scrapper* consta de un programa cuyo objetivo es **extraer información de internet sobre los vuelos en la página oficial de Viva Aerobus** para regresarlá al usuario de manera clara y ordenada dentro de un archivo de texto. Cualquiera puede usar *Viva-Scrapper* y obtener la facilidad, rapidez y apoyo que esta herramienta busca dar.
 
-### 1. Instalar Python en la computadora
+Uno de los problemas que surgen al buscar información en internet es la extracción de dicha información, ya que copiar y pegar literalmente lo que aparece en pantalla resulta impráctico, sin mencionar que la información se copia en desorden y se pierde lo que se quería decir. Este programa obtendrá la información importante de los vuelos y le añadirá de vuelta su significado para que no se pierda lo que se transmitía en la pantalla.
 
-El interprete de Python  puede ser descargado a través de su [página de internet](https://www.python.org/downloads/) para ser instalado en Windows, macOs o Linux.
+Para un buen funcionamiento del programa, se **requerirá** que el usuario conozca e ingrese:
 
-**Asegurarse de añadir Python al PATH.**
+- de donde parte
+- a donde quiere ir 
+- la fecha en la que planea hacerlo
 
-![python-path](./assets//python-path.png)
+Esto debido a que el programa requiere esa información para poder funcionar.
 
-### 2. Crear un entorno virtual
+*Viva-Scrapper* imprimirá una lista de los lugares que maneja Viva Aerobus para que puedan ser ingresados por el usuario. Para evitar errores, se hará uso de ciclos que le indiquen al usuario cuando ha ingresado un lugar o fecha erróneos o en un formato diferente al esperado, ya que las urls de Viva Aerobus dependen de que la información este bien escrita.
 
-Una vez instalado Python, correr este commando con una dirección en la computadora.
+Cuando la información ingresada este correcta, *Viva-Scrapper* iniciará un con la página de Viva Aerobus abierta, se cargarán todos los vuelos disponibles y el programa comenzará a obtener la información de cada vuelo. *Viva-Scrapper* también usará condicionales para dejar afuera información que no sea útil, por ejemplo, no se mostrarán vuelos que estén marcados como llenos. 
 
-```
-python -m venv /path/to/new/virtual/environment
-```
-
-### 3. Activar entorno virtual
-
-Ejecutar alguno de los commandos para activar el entorno virtual en Windows.
-
-| Windows | Comando para activar el entorno virtual  |
-| ------- | ---------------------------------------  |
-| cmd.exe    | *<venv\>*\Scripts\activate.bat |
-| PowerShell | *<venv\>*\Scripts\Activate.ps1 |
-
-Ejecutar alguno de los commandos para activar el entorno virtual en macOs o Linux.
-
-| UNIX | Comando para activar el entorno virtual   |
-| ---- | ---------------------------------------   |
-| bash/zsh   | **source** *<venv\>*/bin/activate         |
-| fish       | **source** *<venv\>*/bin/activate.fish    |
-| csh/tcsh   | **source** *<venv\>*/bin/activate.csh     |
-| PowerShell | *<venv\>*/bin/Activate.ps1            |
-
-### 4. Instalar librería Selenium
-
-Una vez activado el entorno virtual, correr este commando para instalar Selenium.
+Una vez que se haya obtenido la información de la página de Viva Aerobus, *Viva-Scrapper* se encargará de descomponer la información obtenida en variables que recibirán cada dato importante del vuelo y se le regresará al usuario la información de manera sencilla pero con lo necesario para que cada vuelo se siga entendiendo haciendo uso de este formato:
 
 ```
-pip install selenium
+Salida: {día} a las {hora} en {partida}
+Llegada: {hora} en {destino}
+Tipo de vuelo: {tipo}
+Duración: {duración}
+Precio: ${precio}
 ```
 
-### 5. Instalar Google Chrome
+Por último, cuando la información haya sido formateada, se cerrara la ventana de Chrome y el programa guardará lo relevante de los vuelos en un archivo de texto. Este archivo contendrá las opciones que uso el usuario para crearlo, en caso de que deseé revisitarlo tiempo después, y el nombre del archivo estará estructurado usando desde el año hasta el segundo en el que el archivo se creo de tal manera que un archivo no se escriba encima de otro por error.
 
-El explorador de Google Chrome se puede descargar directamente desde de su [página de internet](https://www.google.com/chrome/) para Windows/macOs/Linux.
+### ¿Como puedo usarlo?
 
-### 6. Instalar ChromeDriver
-
-Este paso es muy importante para el buen funcionamiento del programa, se debe installar el [driver de Chrome](https://chromedriver.chromium.org/). Y debe ser añadido al PATH.
-
-*Para saber las direcciones de PATH ejecutar el commando:*
-
-| cmd.exe | PowerShell | sh |
-| ------ | ----------- | -- |
-| echo %PATH% | $env:PATH | echo $PATH |
-
-### 7. Ejecutar programa
-
-- **Opcion 1. Descargar el programa y ejecutarlo**
-
-   Para esto, puedes guardar (Ctrl+S) el [archivo raw de viva-scrapper.py](https://raw.githubusercontent.com/shyguyCreate/viva-scrapper/main/viva-scrapper.py) y guardar el archivo en cualquier lugar.
-
-- **Opcion 2. Clonar este repositorio ejecutar el archivo**
-
-   Si tienes `git` instalado puedes ejecutar este comando:
-
-   ```
-   git clone https://github.com/shyguyCreate/viva-scrapper.git
-   ```
-
-Ya cuando se tenga el archivo en la computadora, correr este commando con la dirección que tenga el archivo:
-
-```
-python /path/to/file/viva-scrapper.py
-```
+[USAGE.md](./USAGE.md)
