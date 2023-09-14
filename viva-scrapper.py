@@ -1,6 +1,7 @@
 from datetime import date
 import time
 import sys
+import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
@@ -331,13 +332,19 @@ user_options += f"con fecha de vuelo: {flight_date}\n"
 user_options += "********************************\n\n"
 
 
+# Directorio desde donde se ejecuta el archivo
+path_script = os.path.dirname(os.path.realpath(sys.argv[0]))
+
 # Guardar formato para tiempo actual
 current_time = time.strftime("%Y%m%d%H%M")
 
+# Nombre del archivo más la dirección en donde guardar
+file = f"{path_script}/viva-{current_time}.txt"
+
 # Llenar archivo de texto con todos los vuelos
-with open(f"viva-{current_time}.txt", "w") as f:
+with open(file, "w") as f:
     f.write(user_options)
     f.write(flights)
 
 # Imprimir mensaje con nombre de archivo
-print(f"Tu archivo esta listo: viva-{current_time}.txt")
+print(f"Tu archivo esta listo: {file}")
