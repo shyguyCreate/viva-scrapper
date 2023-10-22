@@ -1,2 +1,6 @@
+# Virtual environment
+.venv
+venv
+
 # Output file from main program
 viva-*.txt
