@@ -27,12 +27,12 @@ Ejecutar alguno de los commandos para activar el entorno virtual en Windows.
 
 Ejecutar alguno de los commandos para activar el entorno virtual en macOs o Linux.
 
-| UNIX | Comando para activar el entorno virtual   |
-| ---- | ---------------------------------------   |
-| bash/zsh   | **source** *<venv\>*/bin/activate         |
-| fish       | **source** *<venv\>*/bin/activate.fish    |
-| csh/tcsh   | **source** *<venv\>*/bin/activate.csh     |
-| PowerShell | *<venv\>*/bin/Activate.ps1            |
+| UNIX | Comando para activar el entorno virtual |
+| ---- | --------------------------------------- |
+| bash/zsh   | **source** *<venv\>*/bin/activate |
+| fish       | **source** *<venv\>*/bin/activate.fish |
+| csh/tcsh   | **source** *<venv\>*/bin/activate.csh |
+| PowerShell | *<venv\>*/bin/Activate.ps1 |
 
 ### 4. Instalar librería Selenium
 
@@ -53,7 +53,7 @@ Este paso es muy importante para el buen funcionamiento del programa, se debe in
 *Para saber las direcciones de PATH ejecutar el commando:*
 
 | cmd.exe | PowerShell | sh |
-| ------ | ----------- | -- |
+| ------- | ---------- | -- |
 | echo %PATH% | $env:PATH | echo $PATH |
 
 ### 7. Ejecutar programa
